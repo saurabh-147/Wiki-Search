@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <%- include("partials/head"); %>
+  </head>
+  <body>
+    <header>
+      <%- include("partials/header"); %>
+    </header>
+
+      <main>
+
+        <div class="container">
+          <h1 class = "text">Web Search From Wiki</h1>
+          <div class="row">
+            <div class="col-md-4">
+              <form class="form-group" action="/search" method="post">
+                <input class= "form-control"  type="text" name="query" >
+                <button class="btn btn-primary" type="submit">Search From Wiki</button>
+              </form>
+            </div>
+            <div class="result col-md-8">
+                <!-- show Reult over here -->
+
+          <%  names.forEach((name, i) => { %>
+              <a href=<%= links[i] %> > <%=name%></a>
+              <br>
+          <%  }); %>
+
+
+
+            </div>
+          </div>
+        </div>
+      </main>
+
+
+    <footer>
+      <%- include("partials/footer"); %>
+    </footer>
+  </body>
+</html>
